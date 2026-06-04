@@ -3,7 +3,7 @@ npx expo prebuild
 .\gradlew.bat assembleDebug
 
 create file android/local.propertie if fail
-past sdk.dir=C:\\Users\\YourName\\AppData\\Local\\Android\\Sdk
+past sdk.dir=C:/Users/Admin/AppData/Local/Android/Sdk
 
 .\gradlew.bat assembleDebug
 
