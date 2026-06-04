@@ -4,7 +4,7 @@
     "slug": "SuperAppSanbox",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/logos/app-logo.png",
     "scheme": "superappsanbox",
     "userInterfaceStyle": "automatic",
     "ios": {
@@ -31,7 +31,7 @@
         {
           "backgroundColor": "#208AEF",
           "android": {
-            "image": "./assets/images/splash-icon.png",
+            "image": "./assets/logos/app-logo.png",
             "imageWidth": 76
           }
         }
