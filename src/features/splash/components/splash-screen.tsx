@@ -40,7 +40,7 @@ export default function SplashScreen({ onAnimationComplete, onAppReady }: Splash
     // Signal app ready at the START of exit delay — Stack mounts while splash still covers screen
     if (onAppReady) {
       const timer = setTimeout(() => {
-        runOnJS(onAppReady)();
+        onAppReady();
       }, 2000); // same as withDelay below
       return () => clearTimeout(timer);
     }
