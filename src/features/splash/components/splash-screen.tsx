@@ -15,11 +15,12 @@ import { useTheme } from '@/hooks/use-theme';
 
 interface SplashScreenProps {
   onAnimationComplete: () => void;
+  onAppReady?: () => void; // fired when exit fade STARTS — use to mount Stack early
 }
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
-export default function SplashScreen({ onAnimationComplete }: SplashScreenProps) {
+export default function SplashScreen({ onAnimationComplete, onAppReady }: SplashScreenProps) {
   const theme = useTheme();
   const containerOpacity = useSharedValue(1);
   const logoScale = useSharedValue(0.3);
@@ -35,7 +36,15 @@ export default function SplashScreen({ onAnimationComplete }: SplashScreenProps)
 
     logoScale.value = withDelay(300, withTiming(1, { duration: 600, easing: Easing.out(Easing.quad) }));
     logoOpacity.value = withDelay(300, withTiming(1, { duration: 600 }));
-  }, [cardTranslateY, logoOpacity, logoScale]);
+
+    // Signal app ready at the START of exit delay — Stack mounts while splash still covers screen
+    if (onAppReady) {
+      const timer = setTimeout(() => {
+        runOnJS(onAppReady)();
+      }, 2000); // same as withDelay below
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   useEffect(() => {
     // Exit — fade out after 2s, then unmount
@@ -47,7 +56,7 @@ export default function SplashScreen({ onAnimationComplete }: SplashScreenProps)
         }
       })
     );
-  }, [containerOpacity, onAnimationComplete]);
+  }, []);
 
   const animatedContainerStyle = useAnimatedStyle(() => ({ opacity: containerOpacity.value }));
   const animatedCardStyle = useAnimatedStyle(() => ({ transform: [{ translateY: cardTranslateY.value }] }));
