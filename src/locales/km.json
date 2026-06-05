@@ -1,0 +1,23 @@
+{
+  "home": {
+    "title": "កម្មវិធី UAT",
+    "partners": "ដៃគូ",
+    "profile": "គណនី",
+    "selectLanguage": "ជ្រើសរើសភាសា"
+  },
+  "profile": {
+    "title": "គណនីរបស់ខ្ញុំ",
+    "fullName": "ឈ្មោះពេញ",
+    "fullNamePlaceholder": "បញ្ចូលឈ្មោះពេញ",
+    "phone": "លេខទូរស័ព្ទ",
+    "phonePlaceholder": "បញ្ចូលលេខទូរស័ព្ទ",
+    "email": "អ៊ីមែល",
+    "emailPlaceholder": "បញ្ចូលអ៊ីមែល",
+    "gender": "ភេទ",
+    "genderPlaceholder": "បញ្ចូលភេទ",
+    "nationality": "សញ្ជាតិ",
+    "nationalityPlaceholder": "បញ្ចូលសញ្ជាតិ",
+    "save": "រក្សាទុក",
+    "saved": "រក្សាទុករួចហើយ!"
+  }
+}

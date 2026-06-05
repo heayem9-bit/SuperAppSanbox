@@ -1,0 +1,23 @@
+{
+  "home": {
+    "title": "UAT App",
+    "partners": "Partners",
+    "profile": "Profile",
+    "selectLanguage": "Select Language"
+  },
+  "profile": {
+    "title": "My Profile",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter full name",
+    "phone": "Phone",
+    "phonePlaceholder": "Enter phone number",
+    "email": "Email",
+    "emailPlaceholder": "Enter email address",
+    "gender": "Gender",
+    "genderPlaceholder": "Enter gender",
+    "nationality": "Nationality",
+    "nationalityPlaceholder": "Enter nationality",
+    "save": "Save",
+    "saved": "Saved!"
+  }
+}
