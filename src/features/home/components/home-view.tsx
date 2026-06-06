@@ -94,7 +94,7 @@ export function HomeView() {
               }}
               android_ripple={{ color: '#ffffff30', radius: 24 }}
             >
-              <Text style={{ fontSize: 20, lineHeight: 24 }}>{currentLang.flag}</Text>
+              <Text style={{ fontSize: 22, lineHeight: 26 }}>{currentLang.flag}</Text>
             </Pressable>
           ),
         }}
