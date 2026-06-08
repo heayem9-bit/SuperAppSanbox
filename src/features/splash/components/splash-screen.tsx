@@ -9,6 +9,9 @@ interface SplashScreenProps {
   onAnimationComplete: () => void;
 }
 
+// Cast to any to bypass temporary React 19 type definition conflicts in IDE
+const ExpoImage = Image as any;
+
 export default function SplashScreen({
   onAnimationComplete,
 }: SplashScreenProps) {
@@ -17,7 +20,7 @@ export default function SplashScreen({
   useEffect(() => {
     const timer = setTimeout(() => {
       onAnimationComplete();
-    }, 1500);
+    }, 0);
 
     return () => clearTimeout(timer);
   }, [onAnimationComplete]);
@@ -45,7 +48,7 @@ export default function SplashScreen({
           alignItems: 'center',
         }}
       >
-        <Image
+        <ExpoImage
           source={require('../../../../assets/logos/app-logo.png')}
           style={{
             width: 120,

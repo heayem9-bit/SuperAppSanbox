@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { initProfileDb, getProfile, upsertProfile } from '../services/db';
+import { getProfile, upsertProfile } from '../services/db';
 
 export function useProfile() {
   const [fullname, setFullname] = useState('');
@@ -21,7 +21,6 @@ export function useProfile() {
   }, []);
 
   useEffect(() => {
-    initProfileDb();
     const timer = setTimeout(() => {
       loadProfile();
     }, 0);

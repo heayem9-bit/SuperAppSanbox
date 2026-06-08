@@ -1,19 +1,19 @@
-import { useState, useCallback } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link, Stack } from 'expo-router';
 import { SymbolView } from 'expo-symbols';
-import {
-  Pressable,
-  Modal,
-  View,
-  Text,
-  Animated,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import {
+  Animated,
+  Modal,
+  Pressable,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { ThemedView } from '@/components/ui/view';
 import { ThemedText } from '@/components/ui/text';
+import { ThemedView } from '@/components/ui/view';
 import { useTheme } from '@/hooks/use-theme';
 
 const TILES = [
@@ -22,7 +22,8 @@ const TILES = [
     symbolIos: 'building.2',
     symbolAndroid: 'business',
     href: '/sandbox',
-    params: { uri: encodeURIComponent('https://qavetacledaminiapp.udaya-tech.com/#/?profile=eyJmdWxsbmFtZSI6IlllbSBIZWEiLCJwaG9uZSI6IjA5NjI2MzU5NDUifQ') },
+    params: { uri: encodeURIComponent('https://4d47-167-179-37-8.ngrok-free.app/#/kubuta') },
+    // params: { uri: encodeURIComponent('https://qavetacledaminiapp.udaya-tech.com/#/?profile=eyJmdWxsbmFtZSI6IlllbSBIZWEiLCJwaG9uZSI6IjA5NjI2MzU5NDUifQ') },
   },
   {
     nameKey: 'home.profile' as const,
@@ -82,6 +83,10 @@ export function HomeView() {
           headerTitleStyle: {
             color: theme.white,
           },
+          headerLeft: () => null,
+          headerBackVisible: false,
+          gestureEnabled: false,
+
           headerRight: () => (
             <Pressable
               onPress={openSheet}
